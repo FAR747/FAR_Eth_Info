@@ -1,0 +1,35 @@
+﻿<Window x:Class="FAR_Eth_Info.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAR_Eth_Info"
+        mc:Ignorable="d"
+        Title="FAR_Eth_Info" Height="450" Width="800" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="0,0,1,0" HorizontalAlignment="Left" Width="330">
+            <Grid>
+                <Label Content="Connections Info" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="298" HorizontalContentAlignment="Center" FontSize="16"/>
+                <Button x:Name="Connection_Ref_BUTTON" Content="Refresh" HorizontalAlignment="Left" Margin="243,0,0,10" Width="75" Height="19" VerticalAlignment="Bottom" Click="Connection_Ref_BUTTON_Click"/>
+                <ListBox x:Name="Interfaces_List" Margin="10,32,10.4,34"/>
+                <CheckBox x:Name="OnlyUP_CB" Content="Only UP" HorizontalAlignment="Left" Margin="10,0,0,12" VerticalAlignment="Bottom" Width="70" ToolTip="Only UP interfaces"/>
+                <CheckBox x:Name="AutoRefresh_CB" Content="Auto Refresh" HorizontalAlignment="Left" Margin="85,0,0,12" VerticalAlignment="Bottom" Width="90" ToolTip="Auto Refresh every 10 seconds" Checked="AutoRefresh_CB_Checked" Unchecked="AutoRefresh_CB_Checked"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="0,0,0,1" Height="292" Margin="330,0,-0.4,0" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Connections Status" HorizontalAlignment="Left" VerticalAlignment="Top" Width="464" HorizontalContentAlignment="Center" FontSize="16"/>
+                <Label Content="Internet:" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="58" ToolTip="Checked 8.8.8.8"/>
+                <TextBlock x:Name="Status_Internet_TB" HorizontalAlignment="Left" Margin="68,42,0,0" TextWrapping="Wrap" Text="Wait..." VerticalAlignment="Top" Width="386"/>
+                <ListBox x:Name="Ping_list" Margin="1,68,3,34.2"/>
+                <TextBox x:Name="IPPing_add_TB" HorizontalAlignment="Left" Height="34" Margin="80,0,0,0.2" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="315" VerticalContentAlignment="Center"/>
+                <Label Content="IP or Domain" HorizontalAlignment="Left" Margin="0,0,0,0.2" VerticalAlignment="Bottom" Height="34" Width="80" Padding="5,5,0,5" VerticalContentAlignment="Center"/>
+                <Button x:Name="Ping_add_BT" Content="Add" Margin="395,257,3,0.2" Click="Ping_add_BT_Click" Height="34"/>
+            </Grid>
+        </Border>
+        <ListBox x:Name="Log_Listbox" Margin="330,292,2.6,0"/>
+    </Grid>
+</Window>
